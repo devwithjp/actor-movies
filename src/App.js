@@ -2,9 +2,11 @@ import React, { useState } from 'react';
 import axios from 'axios';
 import ActorGenreForm from './ActorGenreForm/ActorGenreForm';
 
-const API_KEY = '9ff5b3b383efd0e12489cadd77f3b90b';
+
+const API_KEY = process.env.REACT_APP_TMDB_API_KEY;
 
 function ActorMovieList() {
+  console.log(API_KEY)
   const [actorName, setActorName] = useState('');
   const [genre, setGenre] = useState('');
   const [movies, setMovies] = useState([]);
